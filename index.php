@@ -14,7 +14,7 @@
 <html>
     <head>
 
-        <title> título da página aqui </title>
+        <title> CRUD Usuários </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- ÍCONE BONITO DA ABA -->
@@ -44,26 +44,25 @@
         <!-- MATERIALIZE ICONS & FONTS -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/index.css" />
 
 
     </head>
     <body>
         <nav>
             <div class="nav-wrapper black" >
-            <a class="navbar-brand" href="index.html" id="navegacao">LOGO</a>
+            <a class="navbar-brand" href="index.php" id="navegacao">LOGO</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
             <?php
 				if(isset($_SESSION['usuarioLogado'])){
 					echo '<li>Usuário: '.$_SESSION['usuarioLogado'].'</li>';
-					echo '<li><a href="index.php?link=2">Área Restrita</a></li>';
-					echo '<li><a href="?sair.php">Sair</a></li>';
-				
+					echo '<li><a href="index.php?page=cadastros">Cadastros</a></li>';
+					echo '<li><a href="?exit">Sair</a></li>';				
 				}else{
-          echo '<li><a class="btn white black-text" href="index.php?link=4">Entrar</a></li>';
-          echo '<li><a  href="index.php?link=4">Cadastre-se</a></li>';
-        }
+                    echo '<li><a class="btn white black-text" href="index.php?page=login">Entrar</a></li>';
+                    echo '<li><a  href="index.php?page=cadastrar">Cadastre-se</a></li>';
+                }
 			  ?>
             </ul>
             </div>
@@ -72,10 +71,10 @@
             <?php
                 if(isset($_SESSION['usuarioLogado'])){
                     echo '<li>Usuário: '.$_SESSION['usuarioLogado'].'</li>';
-                    echo '<li><a href="index.php?link=2">Área Restrita</a></li>';
+                    echo '<li><a href="index.php?page=cadastros">Cadastros</a></li>';
                     echo '<li><a href="?sair.php">Sair</a></li>';
                 }else{
-                    echo '<li><a href="index.php?link=4">Login</a></li>';
+                    echo '<li><a href="index.php?page=login">Entrar</a></li>';
                 }
             ?>
         </ul>
@@ -83,8 +82,8 @@
 		<?php
 			$page= @$_GET['page'];
 			$pag['content'] = 'conteudo.php';
-			$pag['area'] = 'area_restrita.php';
-			$pag['cadastro'] = 'form_cad_usuario.php';
+			$pag['cadastros'] = 'cadastros.php';
+			$pag['cadastrar'] = 'form_cad_usuario.php';
 			$pag['login'] = 'form_login.php';
     
       if(!empty($page) && file_exists($pag[$page])){
@@ -103,7 +102,7 @@
             <div class="container">
                 Desenvolvido por <a href="#"> Maxwell Fernandes</a> © 2019 Copyright
             <a class="right" href="https://github.com/MaxxxF">&nbsp <i class="fab fa-github"></i></a>
-            <a class="right" href="#!"><i class="fab fa-twitter"></i></a>
+            <a class="right" href="#!"><i class="fab fa-linkedin"></i></a>
  
             </div>
           </div>

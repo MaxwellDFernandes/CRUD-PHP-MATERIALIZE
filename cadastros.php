@@ -4,7 +4,6 @@ if(isset ($_SESSION['idLogado']) == true){
       $acao = 'recuperar';
       require('controller/usuario.controller.php');
       
-
 ?>
 <style>
 .g{

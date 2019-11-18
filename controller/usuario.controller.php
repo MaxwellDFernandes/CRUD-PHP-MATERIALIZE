@@ -7,7 +7,7 @@
 	@$acao = isset($_GET['acao'])?$_GET['acao']:$acao;
 	@$id = isset($_GET['id'])?$_GET['id']:$id;
 	
-	//inseri
+	//inserir
 	if($acao == 'inserir'){
 		$usuario = new Usuario();
 		$usuario->__set('nome',$_POST['nome']);
@@ -22,6 +22,8 @@
 		$usuarioServico->inserir();
 		
 		header('Location: index.php');
+		
+		//atualizar
 	}else if($acao == 'atualizar'){
 		$usuario = new Usuario();
 		$usuario->__set('nome',$_POST['nome']);
@@ -36,6 +38,8 @@
 		$usuarioServico->atualizar();
 		
 		header('Location: index.php?page=cadastros');
+
+		//excluir
 	}else if($acao == 'remover'){
 		$usuario = new Usuario();
 		$usuario->__set('nome',$_POST['nome']);
@@ -51,6 +55,7 @@
 		
 		header('Location: index.php?page=cadastros');
 
+		//Caso exclua o usuário 'logado'
 	}else if($acao == 'removerlog'){
 		$usuario = new Usuario();
 		$usuario->__set('nome',$_POST['nome']);

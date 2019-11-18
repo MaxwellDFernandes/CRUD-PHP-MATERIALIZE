@@ -1,5 +1,4 @@
 <div class="section">
-<!--   Icon Section   -->
 <div class="row">
     <div class="col s12 m4">
         <div class="icon-block">
@@ -8,7 +7,6 @@
             <p class="light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium ipsam nemo adipisci ea earum? Omnis inventore aliquam cupiditate dignissimos repellendus assumenda perferendis voluptates, reprehenderit praesentium optio ut tenetur fuga dolore.</p>
         </div>
     </div>
-
     <div class="col s12 m4">
         <div class="icon-block">
         <div class="center row"><img style="height: 110px;" src="images/css.png"></div>
